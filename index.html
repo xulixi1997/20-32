@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>辽宁弘云网络科技有限公司 | 专业的互联网广告与数字营销解决方案</title>
+    <meta name="description" content="辽宁弘云网络科技有限公司专注互联网广告、品牌策略与数字营销。位于辽宁省鞍山市，致力于通过数据驱动为企业带来精准增长。">
+    
+    <!-- Tailwind CSS (样式框架) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome (图标库) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans SC"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a', // 深蓝背景
+                            primary: '#3b82f6', // 科技蓝
+                            accent: '#f97316', // 活力橙
+                            light: '#f8fafc', // 浅灰白
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to right bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('https://picsum.photos/id/48/1920/1080')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* 自定义样式补充 */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+        .nav-scrolled .nav-text {
+            color: #0f172a !important;
+        }
+        
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .service-card:hover .icon-box {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-700 bg-slate-50 antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- 1. 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-6 text-white bg-transparent">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-black tracking-tighter nav-text flex items-center gap-2">
+                <div class="w-8 h-8 bg-brand-accent rounded-br-lg rounded-tl-lg flex items-center justify-center">
+                    <i class="fa-solid fa-cloud text-white text-sm"></i>
+                </div>
+                <span>弘云网络</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8 items-center font-medium nav-text">
+                <a href="#home" class="hover:text-brand-accent transition">首页</a>
+                <a href="#about" class="hover:text-brand-accent transition">关于我们要</a>
+                <a href="#services" class="hover:text-brand-accent transition">核心服务</a>
+                <a href="#portfolio" class="hover:text-brand-accent transition">案例展示</a>
+                <a href="#process" class="hover:text-brand-accent transition">合作流程</a>
+                <a href="#news" class="hover:text-brand-accent transition">行业动态</a>
+                <a href="#contact" class="px-5 py-2 bg-brand-accent text-white rounded-full hover:bg-orange-600 transition shadow-lg shadow-orange-500/30">联系我们</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl nav-text focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white text-slate-800 shadow-xl border-t">
+            <div class="flex flex-col p-6 space-y-4 font-medium">
+                <a href="#home" class="mobile-link">首页</a>
+                <a href="#services" class="mobile-link">服务</a>
+                <a href="#portfolio" class="mobile-link">案例</a>
+                <a href="#contact" class="mobile-link text-brand-accent">联系我们</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Hero Header (首屏) -->
+    <section id="home" class="relative h-screen flex items-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
+        <div class="container mx-auto px-6 relative z-10 text-center md:text-left pt-20">
+            <div class="md:w-2/3 lg:w-1/2">
+                <span class="inline-block py-1 px-3 rounded bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm font-bold tracking-wider mb-6 backdrop-blur-sm">
+                    DIGITAL MARKETING EXPERTS
+                </span>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
+                    数据驱动增长<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-brand-accent">重塑品牌价值</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl">
+                    辽宁弘云网络科技有限公司致力于为企业提供全链路互联网广告解决方案。我们不只是投放广告，更是您在数字时代的增长引擎。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="px-8 py-4 bg-brand-accent text-white font-bold rounded hover:bg-orange-600 transition shadow-lg shadow-orange-500/30 flex items-center justify-center gap-2">
+                        立即咨询 <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#portfolio" class="px-8 py-4 bg-white/10 text-white backdrop-blur-sm border border-white/20 font-bold rounded hover:bg-white hover:text-brand-dark transition flex items-center justify-center gap-2">
+                        查看案例 <i class="fa-solid fa-play"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 滚动提示 -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- 3. 品牌介绍 (About) -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2 fade-in-section relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://picsum.photos/id/3/800/600" alt="公司办公环境" class="w-full h-auto object-cover transform hover:scale-105 transition duration-700">
+                        <div class="absolute bottom-0 left-0 bg-brand-dark p-6 text-white w-2/3 rounded-tr-3xl">
+                            <p class="text-2xl font-bold">10+</p>
+                            <p class="text-sm text-slate-400">年行业深耕经验</p>
+                        </div>
+                    </div>
+                    <!-- 装饰元素 -->
+                    <div class="absolute -z-10 top-10 -right-10 w-40 h-40 bg-brand-accent/20 rounded-full blur-3xl"></div>
+                </div>
+                <div class="lg:w-1/2 fade-in-section">
+                    <h2 class="text-sm font-bold text-brand-primary uppercase tracking-wider mb-2">关于弘云网络</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">立足辽宁，服务全国<br>打造最具影响力的数字营销平台</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        辽宁弘云网络科技有限公司坐落于鞍山市立山区。作为一家技术驱动型互联网广告公司，我们整合了大数据分析、AI智能投放与创意内容生产三大核心能力。
+                    </p>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        不同于传统广告代理，我们深入客户业务场景，从品牌定位到效果转化，提供一站式闭环服务。无论是本地生活推广，还是全国品牌声量构建，弘云都是您值得信赖的合作伙伴。
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-brand-accent"></i>
+                            <span class="font-medium text-brand-dark">全媒体矩阵覆盖 (抖音/头条/腾讯/百度)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-brand-accent"></i>
+                            <span class="font-medium text-brand-dark">ROI 导向的效果承诺</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-brand-accent"></i>
+                            <span class="font-medium text-brand-dark">1对1 专业运营团队支撑</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 数据统计 (Data) -->
+    <section class="py-16 bg-brand-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in-section">
+                    <div class="text-4xl md:text-5xl font-black text-brand-primary mb-2 count-up" data-target="500">0</div>
+                    <div class="text-slate-400">服务企业 (家)</div>
+                </div>
+                <div class="fade-in-section delay-100">
+                    <div class="text-4xl md:text-5xl font-black text-brand-accent mb-2 count-up" data-target="10000">0</div>
+                    <div class="text-slate-400">日均线索 (条)</div>
+                </div>
+                <div class="fade-in-section delay-200">
+                    <div class="text-4xl md:text-5xl font-black text-blue-400 mb-2 count-up" data-target="98">0</div>
+                    <div class="text-slate-400">客户满意度 (%)</div>
+                </div>
+                <div class="fade-in-section delay-300">
+                    <div class="text-4xl md:text-5xl font-black text-orange-400 mb-2 count-up" data-target="15">0</div>
+                    <div class="text-slate-400">行业奖项 (项)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 核心服务 (Services) -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-section">
+                <h2 class="text-sm font-bold text-brand-primary uppercase tracking-wider mb-2">OUR SERVICES</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">全维度数字化营销服务体系</h3>
+                <p class="text-slate-600">从流量获取到私域沉淀，我们为您提供全生命周期的营销解决方案。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 fade-in-section">
+                    <div class="icon-box w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300">
+                        <i class="fa-solid fa-bullhorn text-3xl text-brand-primary"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-primary transition">信息流广告投放</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        覆盖今日头条、抖音、快手等主流平台，基于人群画像进行精准定向，降低获客成本，提升转化效率。
+                    </p>
+                    <a href="#contact" class="text-brand-primary text-sm font-bold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 fade-in-section delay-100">
+                    <div class="icon-box w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300">
+                        <i class="fa-solid fa-magnifying-glass-chart text-3xl text-brand-accent"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-accent transition">搜索引擎优化 (SEM/SEO)</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        占据百度、360等搜索入口关键词排名。通过竞价托管与官网优化双管齐下，拦截高意向精准流量。
+                    </p>
+                    <a href="#contact" class="text-brand-accent text-sm font-bold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 fade-in-section delay-200">
+                    <div class="icon-box w-16 h-16 bg-purple-50 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300">
+                        <i class="fa-solid fa-pen-nib text-3xl text-purple-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-3 group-hover:text-purple-500 transition">品牌全案设计</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        从LOGO设计到VI视觉识别系统，再到营销落地页设计，用国际化的审美标准重塑您的品牌视觉形象。
+                    </p>
+                    <a href="#contact" class="text-purple-500 text-sm font-bold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 fade-in-section">
+                    <div class="icon-box w-16 h-16 bg-green-50 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300">
+                        <i class="fa-solid fa-video text-3xl text-green-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-3 group-hover:text-green-500 transition">短视频代运营</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        提供脚本策划、专业拍摄、后期剪辑及账号运营服务。打造爆款内容，实现粉丝增长与直播带货变现。
+                    </p>
+                    <a href="#contact" class="text-green-500 text-sm font-bold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 fade-in-section delay-100">
+                    <div class="icon-box w-16 h-16 bg-red-50 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300">
+                        <i class="fa-solid fa-laptop-code text-3xl text-red-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-3 group-hover:text-red-500 transition">网站与小程序开发</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        基于最新的HTML5技术，定制开发响应式企业官网、微信小程序及H5互动营销页面，提升用户体验。
+                    </p>
+                    <a href="#contact" class="text-red-500 text-sm font-bold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 fade-in-section delay-200">
+                    <div class="icon-box w-16 h-16 bg-indigo-50 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300">
+                        <i class="fa-solid fa-database text-3xl text-indigo-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-3 group-hover:text-indigo-500 transition">大数据舆情监测</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        实时监控全网品牌声量，智能分析用户评价与竞品动态，为企业决策提供科学的数据支持与危机预警。
+                    </p>
+                    <a href="#contact" class="text-indigo-500 text-sm font-bold hover:underline">了解更多 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 媒体矩阵 (Network) -->
+    <section class="py-12 border-y border-slate-200 bg-white">
+        <div class="container mx-auto px-6">
+            <p class="text-center text-slate-400 font-bold mb-8 uppercase text-sm tracking-widest">Connected Platforms</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- 使用 FontAwesome 模拟品牌Logo -->
+                <div class="flex items-center gap-2 text-2xl font-bold text-slate-800"><i class="fa-brands fa-tiktok text-3xl"></i> 抖音</div>
+                <div class="flex items-center gap-2 text-2xl font-bold text-slate-800"><i class="fa-brands fa-weixin text-3xl"></i> 微信朋友圈</div>
+                <div class="flex items-center gap-2 text-2xl font-bold text-slate-800"><i class="fa-brands fa-weibo text-3xl"></i> 新浪微博</div>
+                <div class="flex items-center gap-2 text-2xl font-bold text-slate-800"><i class="fa-brands fa-google text-3xl"></i> 搜索引擎</div>
+                <div class="flex items-center gap-2 text-2xl font-bold text-slate-800"><i class="fa-brands fa-zhihu text-3xl"></i> 知乎</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. 服务流程 (Process) -->
+    <section id="process" class="py-20 bg-brand-dark text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in-section">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">标准化服务流程</h2>
+                <p class="text-slate-400">环环相扣，确保每一个项目都达到预期效果</p>
+            </div>
+
+            <div class="relative">
+                <!-- Line -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-slate-700 -translate-y-1/2 z-0"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="text-center fade-in-section bg-brand-dark p-4">
+                        <div class="w-16 h-16 mx-auto bg-brand-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 border-4 border-brand-dark relative">
+                            1
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">需求诊断</h4>
+                        <p class="text-slate-400 text-sm">分析市场环境与竞品，明确营销目标</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="text-center fade-in-section delay-100 bg-brand-dark p-4">
+                        <div class="w-16 h-16 mx-auto bg-brand-accent rounded-full flex items-center justify-center text-2xl font-bold mb-6 border-4 border-brand-dark">
+                            2
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">策略定制</h4>
+                        <p class="text-slate-400 text-sm">输出媒介组合方案与创意内容脚本</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="text-center fade-in-section delay-200 bg-brand-dark p-4">
+                        <div class="w-16 h-16 mx-auto bg-blue-400 rounded-full flex items-center justify-center text-2xl font-bold mb-6 border-4 border-brand-dark">
+                            3
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">执行投放</h4>
+                        <p class="text-slate-400 text-sm">精细化账户搭建，实时监控投放数据</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="text-center fade-in-section delay-300 bg-brand-dark p-4">
+                        <div class="w-16 h-16 mx-auto bg-green-500 rounded-full flex items-center justify-center text-2xl font-bold mb-6 border-4 border-brand-dark">
+                            4
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">优化复盘</h4>
+                        <p class="text-slate-400 text-sm">定期输出数据报表，持续优化ROI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. 我们的优势 (Why Us) -->
+    <section class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6 flex flex-col-reverse lg:flex-row gap-12 items-center">
+            <div class="lg:w-1/2 grid grid-cols-2 gap-6 fade-in-section">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                    <i class="fa-solid fa-medal text-brand-accent text-3xl mb-4"></i>
+                    <h4 class="font-bold text-lg mb-2">专业认证团队</h4>
+                    <p class="text-sm text-slate-500">核心成员均持有主流媒体投放认证资质。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                    <i class="fa-solid fa-chart-line text-blue-500 text-3xl mb-4"></i>
+                    <h4 class="font-bold text-lg mb-2">效果即时可见</h4>
+                    <p class="text-sm text-slate-500">透明化后台数据，每一分预算都花在刀刃上。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                    <i class="fa-solid fa-palette text-purple-500 text-3xl mb-4"></i>
+                    <h4 class="font-bold text-lg mb-2">顶尖创意能力</h4>
+                    <p class="text-sm text-slate-500">拥有一流的平面与视频制作团队，素材点击率高。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                    <i class="fa-solid fa-headset text-green-500 text-3xl mb-4"></i>
+                    <h4 class="font-bold text-lg mb-2">7x24h 响应</h4>
+                    <p class="text-sm text-slate-500">本地化服务优势，随时响应您的紧急需求。</p>
+                </div>
+            </div>
+            <div class="lg:w-1/2 fade-in-section">
+                <h2 class="text-sm font-bold text-brand-primary uppercase tracking-wider mb-2">WHY CHOOSE US</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">为什么辽宁企业选择<br>弘云网络？</h3>
+                <p class="text-slate-600 mb-6 text-lg">
+                    在数字营销日益复杂的今天，您需要的不只是一个执行者，而是一个懂得生意的战略伙伴。
+                </p>
+                <div class="bg-blue-50 border-l-4 border-brand-primary p-6 rounded-r-lg">
+                    <p class="italic text-slate-700 font-medium">
+                        "我们通过技术手段打通数据孤岛，通过创意内容连接人心。弘云网络的使命，就是让每一次广告展示都有价值。"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. 视频/视觉区域 (Parallax) -->
+    <section class="relative py-32 bg-fixed bg-cover bg-center flex items-center justify-center" style="background-image: url('https://picsum.photos/id/180/1920/800');">
+        <div class="absolute inset-0 bg-brand-dark/70"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <a href="#contact" class="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-brand-accent hover:scale-110 transition duration-300 cursor-pointer">
+                <i class="fa-solid fa-play text-2xl pl-1"></i>
+            </a>
+            <h2 class="text-3xl font-bold text-white mt-8">见证品牌蜕变的力量</h2>
+            <p class="text-slate-300 mt-2">观看我们的年度服务集锦</p>
+        </div>
+    </section>
+
+    <!-- 10. 成功案例 (Portfolio) -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-12 fade-in-section">
+                <div>
+                    <h2 class="text-sm font-bold text-brand-primary uppercase tracking-wider mb-2">PORTFOLIO</h2>
+                    <h3 class="text-3xl font-bold text-brand-dark">近期精选案例</h3>
+                </div>
+                <a href="#contact" class="hidden md:inline-block text-slate-500 hover:text-brand-accent transition font-medium">查看更多 <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Case 1 -->
+                <div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer fade-in-section">
+                    <img src="https://picsum.photos/id/1/800/600" alt="案例1" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-accent text-sm font-bold mb-1">电商零售</span>
+                        <h4 class="text-white text-xl font-bold">某本地服装品牌ROI翻倍计划</h4>
+                    </div>
+                </div>
+                <!-- Case 2 -->
+                <div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer fade-in-section delay-100">
+                    <img src="https://picsum.photos/id/20/800/600" alt="案例2" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-accent text-sm font-bold mb-1">机械制造</span>
+                        <h4 class="text-white text-xl font-bold">重工企业海外SEO获客方案</h4>
+                    </div>
+                </div>
+                <!-- Case 3 -->
+                <div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer fade-in-section delay-200">
+                    <img src="https://picsum.photos/id/36/800/600" alt="案例3" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-accent text-sm font-bold mb-1">餐饮美食</span>
+                        <h4 class="text-white text-xl font-bold">连锁餐饮抖音探店矩阵营销</h4>
+                    </div>
+                </div>
+                <!-- Case 4 -->
+                <div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer fade-in-section">
+                    <img src="https://picsum.photos/id/60/800/600" alt="案例4" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-accent text-sm font-bold mb-1">教育培训</span>
+                        <h4 class="text-white text-xl font-bold">暑期招生信息流精准投放</h4>
+                    </div>
+                </div>
+                <!-- Case 5 -->
+                <div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer fade-in-section delay-100">
+                    <img src="https://picsum.photos/id/119/800/600" alt="案例5" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-accent text-sm font-bold mb-1">房产家居</span>
+                        <h4 class="text-white text-xl font-bold">高端楼盘线上看房小程序</h4>
+                    </div>
+                </div>
+                <!-- Case 6 -->
+                <div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer fade-in-section delay-200">
+                    <img src="https://picsum.photos/id/180/800/600" alt="案例6" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-accent text-sm font-bold mb-1">商务服务</span>
+                        <h4 class="text-white text-xl font-bold">企业品牌官网改版升级</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. 客户评价 (Testimonials) -->
+    <section class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-3xl font-bold text-brand-dark mb-12 fade-in-section">客户怎么说</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative fade-in-section">
+                    <i class="fa-solid fa-quote-left text-4xl text-blue-100 absolute top-6 left-6"></i>
+                    <p class="text-slate-600 relative z-10 mb-6 pt-6">"与弘云合作两年了，他们的响应速度和专业程度在辽宁本地绝对是数一数二的。尤其是去年的双十一活动，帮助我们实现了业绩翻倍。"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://picsum.photos/id/64/100/100" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-bold text-brand-dark">张总</h5>
+                            <p class="text-xs text-slate-500">某知名装饰公司总经理</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative fade-in-section delay-100">
+                    <i class="fa-solid fa-quote-left text-4xl text-blue-100 absolute top-6 left-6"></i>
+                    <p class="text-slate-600 relative z-10 mb-6 pt-6">"非常专业的团队！他们不仅懂技术，更懂市场。为我们制定的私域流量方案非常落地，实实在在地解决了我们的获客难题。"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://picsum.photos/id/91/100/100" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-bold text-brand-dark">李经理</h5>
+                            <p class="text-xs text-slate-500">连锁餐饮品牌运营总监</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative fade-in-section delay-200">
+                    <i class="fa-solid fa-quote-left text-4xl text-blue-100 absolute top-6 left-6"></i>
+                    <p class="text-slate-600 relative z-10 mb-6 pt-6">"从网站建设到后期的SEO推广，弘云提供的一站式服务让我们省心不少。关键词排名很稳定，咨询量明显提升。"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://picsum.photos/id/65/100/100" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-bold text-brand-dark">王厂长</h5>
+                            <p class="text-xs text-slate-500">鞍山某机械制造厂</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. 技术栈 (Tech Stack) -->
+    <section class="py-16 bg-white border-t border-slate-100">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-slate-400 text-sm mb-8 font-bold tracking-widest uppercase">Powered By Technology</p>
+            <div class="flex justify-center items-center gap-6 md:gap-12 flex-wrap">
+                <i class="fa-brands fa-html5 text-4xl text-orange-500" title="HTML5"></i>
+                <i class="fa-brands fa-css3-alt text-4xl text-blue-500" title="CSS3"></i>
+                <i class="fa-brands fa-js text-4xl text-yellow-400" title="JavaScript"></i>
+                <i class="fa-brands fa-wordpress text-4xl text-slate-700" title="WordPress"></i>
+                <i class="fa-brands fa-vuejs text-4xl text-green-500" title="Vue.js"></i>
+                <i class="fa-brands fa-python text-4xl text-blue-800" title="Python Data Analysis"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. 核心团队 (Team) -->
+    <section class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-brand-dark mb-12 text-center fade-in-section">我们的专家团队</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Member 1 -->
+                <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition fade-in-section">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://picsum.photos/id/1005/400/400" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-lg text-brand-dark">刘伟</h4>
+                        <p class="text-sm text-brand-primary font-medium mb-2">创始人 & CEO</p>
+                        <p class="text-xs text-slate-500">12年数字营销经验，曾任职于BAT大厂。</p>
+                    </div>
+                </div>
+                <!-- Member 2 -->
+                <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition fade-in-section delay-100">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://picsum.photos/id/1027/400/400" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-lg text-brand-dark">陈思思</h4>
+                        <p class="text-sm text-brand-primary font-medium mb-2">设计总监</p>
+                        <p class="text-xs text-slate-500">主导过50+大型品牌全案设计项目。</p>
+                    </div>
+                </div>
+                <!-- Member 3 -->
+                <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition fade-in-section delay-200">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://picsum.photos/id/1062/400/400" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-lg text-brand-dark">王强</h4>
+                        <p class="text-sm text-brand-primary font-medium mb-2">技术技术总监</p>
+                        <p class="text-xs text-slate-500">全栈工程师，擅长高并发系统架构。</p>
+                    </div>
+                </div>
+                <!-- Member 4 -->
+                <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition fade-in-section delay-300">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://picsum.photos/id/338/400/400" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-lg text-brand-dark">赵敏</h4>
+                        <p class="text-sm text-brand-primary font-medium mb-2">运营总监</p>
+                        <p class="text-xs text-slate-500">资深优化师，管理年消耗千万级广告账户。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. 新闻资讯 (News) -->
+    <section id="news" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-brand-dark mb-12 fade-in-section">行业洞察</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <article class="flex flex-col fade-in-section">
+                    <img src="https://picsum.photos/id/6/600/400" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <div class="text-xs text-brand-accent font-bold mb-2">2023-10-24</div>
+                    <h3 class="font-bold text-lg mb-3 hover:text-brand-primary cursor-pointer transition">2024年短视频营销趋势解读：内容为王</h3>
+                    <p class="text-slate-500 text-sm line-clamp-3">随着用户审美疲劳，高质量、剧情化、真实感的内容将成为获取流量的关键...</p>
+                    <a href="#" class="mt-4 text-sm font-bold text-slate-800 hover:text-brand-primary">阅读更多</a>
+                </article>
+                <article class="flex flex-col fade-in-section delay-100">
+                    <img src="https://picsum.photos/id/42/600/400" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <div class="text-xs text-brand-accent font-bold mb-2">2023-10-15</div>
+                    <h3 class="font-bold text-lg mb-3 hover:text-brand-primary cursor-pointer transition">本地企业如何利用同城流量实现突围？</h3>
+                    <p class="text-slate-500 text-sm line-clamp-3">针对实体门店，如何利用抖音同城和大众点评进行精准引流，提升到店率...</p>
+                    <a href="#" class="mt-4 text-sm font-bold text-slate-800 hover:text-brand-primary">阅读更多</a>
+                </article>
+                <article class="flex flex-col fade-in-section delay-200">
+                    <img src="https://picsum.photos/id/60/600/400" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <div class="text-xs text-brand-accent font-bold mb-2">2023-09-28</div>
+                    <h3 class="font-bold text-lg mb-3 hover:text-brand-primary cursor-pointer transition">私域流量运营的三个核心关键点</h3>
+                    <p class="text-slate-500 text-sm line-clamp-3">流量越来越贵，如何将公域流量转化为私域资产，并进行精细化运营...</p>
+                    <a href="#" class="mt-4 text-sm font-bold text-slate-800 hover:text-brand-primary">阅读更多</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 15. 常见问题 (FAQ) -->
+    <section class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-center text-3xl font-bold text-brand-dark mb-10 fade-in-section">常见问题解答</h2>
+            <div class="space-y-4 fade-in-section">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-slate-800 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
+                        你们的服务收费模式是怎样的？
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 py-4 text-slate-600 bg-slate-50 border-t hidden">
+                        我们的收费模式灵活多样，包括按项目报价（如网站开发）、按服务周期收费（如代运营月费/年费）以及按投放消耗比例收取服务费（如广告投放）。具体需根据您的需求定制方案。
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-slate-800 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
+                        广告投放多久能看到效果？
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 py-4 text-slate-600 bg-slate-50 border-t hidden">
+                        信息流广告通常在账户搭建完成并通过审核后，开启投放当天即可产生曝光。经过3-7天的模型学习期和优化调整，通常在第二周开始效果会趋于稳定并逐步提升。
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-slate-800 flex justify-between items-center focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
+                        是否支持异地客户合作？
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 py-4 text-slate-600 bg-slate-50 border-t hidden">
+                        完全支持。我们服务过全国多个省市的客户。通过线上会议、远程协作工具以及完善的项目管理流程，我们可以高效地完成异地项目交付。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 16. CTA Banner -->
+    <section class="py-16 bg-brand-primary relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-accent opacity-90 mix-blend-multiply"></div>
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center text-white">
+            <h2 class="text-3xl md:text-5xl font-black mb-6">准备好开启数字化增长了吗？</h2>
+            <p class="text-xl mb-8 opacity-90">免费获取为您定制的品牌营销诊断报告</p>
+            <a href="#contact" class="inline-block px-10 py-4 bg-white text-brand-accent font-bold rounded-full hover:bg-slate-100 transition shadow-lg transform hover:-translate-y-1">立即联系我们</a>
+        </div>
+    </section>
+
+    <!-- 17. 联系我们 (Contact) -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Contact Info -->
+                <div class="lg:w-1/3 fade-in-section">
+                    <h2 class="text-3xl font-bold text-brand-dark mb-8">联系方式</h2>
+                    <p class="text-slate-600 mb-8">无论是业务咨询还是技术探讨，我们都期待与您的交流。</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-brand-primary flex-shrink-0">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-brand-dark">公司地址</h5>
+                                <p class="text-slate-600">辽宁省鞍山市立山区<br>胜利北路沙河街19号</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-brand-primary flex-shrink-0">
+                                <i class="fa-solid fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-brand-dark">电子邮箱</h5>
+                                <p class="text-slate-600">info@lnhongyunnet.asia</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-brand-primary flex-shrink-0">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-brand-dark">联系电话</h5>
+                                <p class="text-slate-600 font-mono text-lg">192 6490 3715</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Placeholder -->
+                    <div class="mt-8 w-full h-48 bg-slate-100 rounded-xl overflow-hidden relative">
+                        <!-- 这里的图片模拟地图显示 -->
+                        <img src="https://picsum.photos/id/1050/600/400" class="w-full h-full object-cover opacity-80" alt="地图">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/10">
+                            <span class="bg-white px-4 py-2 rounded-lg shadow font-bold text-sm"><i class="fa-solid fa-map-pin text-red-500 mr-1"></i> 辽宁弘云</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="lg:w-2/3 bg-slate-50 p-8 md:p-12 rounded-3xl fade-in-section delay-100">
+                    <h3 class="text-2xl font-bold text-brand-dark mb-6">在线留言</h3>
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('感谢您的留言，我们会尽快联系您！');">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">您的姓名</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border-slate-200 border focus:border-brand-primary focus:ring-2 focus:ring-blue-200 outline-none transition" placeholder="请输入姓名">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">联系电话</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-lg border-slate-200 border focus:border-brand-primary focus:ring-2 focus:ring-blue-200 outline-none transition" placeholder="请输入手机号码">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">所属公司/行业</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border-slate-200 border focus:border-brand-primary focus:ring-2 focus:ring-blue-200 outline-none transition" placeholder="例如：餐饮、电商...">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">需求描述</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border-slate-200 border focus:border-brand-primary focus:ring-2 focus:ring-blue-200 outline-none transition" placeholder="请简要描述您的需求，例如：我想做抖音推广..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-brand-dark text-white font-bold rounded-lg hover:bg-slate-800 transition shadow-lg">提交留言</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 18. 页脚 (Footer) -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="text-2xl font-black text-white flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-brand-accent rounded-br-lg rounded-tl-lg flex items-center justify-center">
+                            <i class="fa-solid fa-cloud text-white text-sm"></i>
+                        </div>
+                        <span>弘云网络</span>
+                    </a>
+                    <p class="text-sm text-slate-400 mb-6">
+                        专注互联网广告与数字营销。<br>助力企业实现数字化转型与商业增长。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 bg-slate-800 flex items-center justify-center rounded-full hover:bg-brand-primary transition"><i class="fa-brands fa-weixin"></i></a>
+                        <a href="#" class="w-8 h-8 bg-slate-800 flex items-center justify-center rounded-full hover:bg-brand-primary transition"><i class="fa-brands fa-weibo"></i></a>
+                        <a href="#" class="w-8 h-8 bg-slate-800 flex items-center justify-center rounded-full hover:bg-brand-primary transition"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">核心服务</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-brand-accent transition">信息流广告</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition">搜索引擎优化</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition">品牌全案设计</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition">短视频运营</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">快速导航</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#about" class="hover:text-brand-accent transition">关于我们</a></li>
+                        <li><a href="#portfolio" class="hover:text-brand-accent transition">成功案例</a></li>
+                        <li><a href="#news" class="hover:text-brand-accent transition">新闻资讯</a></li>
+                        <li><a href="#contact" class="hover:text-brand-accent transition">联系我们</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">联系信息</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i>
+                            <span>辽宁省鞍山市立山区<br>胜利北路沙河街19号</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-brand-accent"></i>
+                            <span>info@lnhongyunnet.asia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand-accent"></i>
+                            <span>192 6490 3715</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2024 辽宁弘云网络科技有限公司 版权所有.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">隐私政策</a>
+                    <a href="#" class="hover:text-white transition">服务条款</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // 2. Sticky Navbar Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+                navbar.classList.remove('text-white');
+                navbar.classList.add('text-slate-900');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+                navbar.classList.add('text-white');
+                navbar.classList.remove('text-slate-900');
+            }
+        });
+
+        // 3. Fade In Animation on Scroll using Intersection Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Stop observing once visible to prevent re-triggering (optional)
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // 4. Number Counter Animation
+        const countElements = document.querySelectorAll('.count-up');
+        let hasCounted = false;
+
+        const countObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasCounted) {
+                    countElements.forEach(el => {
+                        const target = parseInt(el.getAttribute('data-target'));
+                        const duration = 2000; // 2 seconds
+                        const step = target / (duration / 16); // 60fps
+                        let current = 0;
+
+                        const timer = setInterval(() => {
+                            current += step;
+                            if (current >= target) {
+                                el.innerText = target + '+'; // Add + sign
+                                clearInterval(timer);
+                            } else {
+                                el.innerText = Math.floor(current);
+                            }
+                        }, 16);
+                    });
+                    hasCounted = true;
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if(countElements.length > 0) {
+            countObserver.observe(countElements[0].parentElement.parentElement);
+        }
+
+    </script>
+</body>
+</html>
